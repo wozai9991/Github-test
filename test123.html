@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body style="margin:0">
+<img src="images/bg-img.png" style="position:absolute;left:0;top:0;z-index:-999" id="bg" />
+<div style="font-size:1000px;">网页内容</div>
+<script>
+var bgimg = document.getElementById("bg");
+setInterval("changBg()",30);
+function changBg(){
+bgimg.style.width = Math.min(document.documentElement.clientWidth,document.body.clientWidth) + "px";
+
+bgimg.style.height = Math.min(document.documentElement.clientHeight,document.body.clientHeight) + "px";
+bgimg.style.left = (document.body.scrollLeft || document.documentElement.scrollLeft || window.pageXOffset) + "px";
+bgimg.style.top = (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) + "px";
+}
+</script>
+</body>
+</html>
